@@ -15,11 +15,28 @@ const presidents = [
 
 //Challenge Questions
 //1) Filter all presidents, leaving only the Democratic ones
+const democratic = presidents.filter(president => (president.party === 'D'));
+
+console.table(democratic);
 
 //2)Filter all presidents to leave only one term Republican presidents HINT use If statement
+const republican = presidents.filter(function(presidents) {
+  if(presidents.terms === 1 && presidents.party === 'R') {
+    return true;
+  }
+});
+
+console.log(republican);
 
 //3) return only the last three presidents
+console.log (presidents.slice(9, 12));
 
 //4) log all dems who served 2 terms. HINT use chain filter, filter and slice
+const dems = presidents.filter(function(presidents) {
+  if(presidents.terms === 2 && presidents.party === 'D') {
+    return true;
+  }
+});
 
+console.table(dems);
 //BONUS write a script to check if LBJ was a 2 term president. IF he was then alert("LBJ served two terms") else alert "LBJ was one and done"
